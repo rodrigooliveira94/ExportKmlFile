@@ -1,0 +1,9 @@
+﻿@model RodrigoDeveloper.Dominio.Facades.ExportKmlFile
+@{
+    Layout = null;
+    ViewBag.Title = "ExportKml";
+
+    Response.Write(@Model.xml);
+    Response.ContentType = "application/vnd.google-earth.kml+xml";
+    Response.AddHeader("Content-Disposition", "attachment; filename=" + @Model.name + ".kml");
+}
